@@ -1,4 +1,4 @@
-package com.trpp.englishproject.View;
+package com.trpp.englishproject.View.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,11 +8,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-import com.trpp.englishproject.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+import com.trpp.englishproject.*;
+import com.trpp.englishproject.View.Activities.EntryActivity;
 
 public class ResultActivity extends AppCompatActivity {
 

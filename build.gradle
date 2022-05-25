@@ -1,8 +1,13 @@
 buildscript {
     dependencies {
         classpath 'com.google.gms:google-services:4.3.10'
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle-api:3.3.3'
     }
+
+    repositories {
+        google()
+    }
+
 }
 plugins {
     id 'com.android.application' version '7.1.1' apply false

@@ -1,12 +1,12 @@
 package com.trpp.englishproject.Model;
 
 public class User {
-    private String userName;
-    private String password;
+    String userName;
+    String password;
 
-    public User(String userName, String passWord) {
+    public User(String userName, String password) {
         this.userName = userName;
-        this.password = passWord;
+        this.password = password;
     }
 
     public User() {

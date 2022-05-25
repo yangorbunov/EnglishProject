@@ -1,4 +1,4 @@
-package com.trpp.englishproject.View;
+package com.trpp.englishproject.View.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
+import com.trpp.englishproject.*;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,7 +19,6 @@ import com.trpp.englishproject.Model.ImageQuestion;
 import com.trpp.englishproject.Model.TestQuestion;
 import com.trpp.englishproject.Model.TextQuestion;
 import com.trpp.englishproject.Model.User;
-import com.trpp.englishproject.R;
 
 import java.util.ArrayList;
 
@@ -59,49 +59,43 @@ public class EntryActivity extends AppCompatActivity {
         });
 
         buttonStart.setOnClickListener(view -> {
+            Toast.makeText(this,
+                    "XD",
+                    Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(EntryActivity.this, LoadingActivity.class);
             startActivity(intent);
         });
 
-//        buttonAdd.setOnClickListener(view -> {
-//            for (User u : usersList) {
-//                if (userNameET.getText() != null && passWordET.getText() != null) {
-//                    if (u.getUserName().equals(userNameET.getText().toString()) &&
-//                            u.getPassword().equals(passWordET.getText().toString())) {
-//                        Intent intent = new Intent(EntryActivity.this, LoadingActivity.class);
-//                        startActivity(intent);
-//                    }
-//                    Toast.makeText(this,
-//                            "неверный логин или пароль",
-//                            Toast.LENGTH_SHORT).show();
-//                }
-//                Toast.makeText(this,
-//                        "Для добавления вопросов введите логин и пароль",
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        buttonAdd.setOnClickListener(view -> {
+            readUsersFromDB();
 
-    }
-
-    private void readTextTasksFromDB(){
-        DatabaseReference itemsRef = firebaseDatabase.getReference().child("Text");
-
-        itemsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for(DataSnapshot ds : snapshot.getChildren()) {
-                    TextQuestion o = ds.getValue(TextQuestion.class);
-                    if (o != null) {
-                        textQuestions.add(o);
-                    }
-                }
+            if (usersList.isEmpty()){
+                Toast.makeText(this,
+                        "XD XD",
+                        Toast.LENGTH_SHORT).show();
             }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"DB error text",Toast.LENGTH_SHORT).show();
+            for (User u : usersList) {
+                if (userNameET.getText() != null && passWordET.getText() != null) {
+                    if (!userNameET.getText().toString().equals("") && !passWordET.getText().toString().equals("")) {
+                        if (u.getUserName().equals(userNameET.getText().toString()) &&
+                                u.getPassword().equals(passWordET.getText().toString())) {
+                            Intent intent = new Intent(EntryActivity.this, AddingActivity.class);
+                            startActivity(intent);
+                        }
+                        Toast.makeText(this,
+                                "Неверный логин или пароль",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    Toast.makeText(this,
+                            "Для добавления вопросов введите логин и пароль",
+                            Toast.LENGTH_SHORT).show();
+                }
+                Toast.makeText(this,
+                        "XD",
+                        Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     private void readUsersFromDB(){
@@ -125,12 +119,36 @@ public class EntryActivity extends AppCompatActivity {
         });
     }
 
+    private void readTextTasksFromDB(){
+        DatabaseReference itemsRef = firebaseDatabase.getReference().child("Text");
+
+        itemsRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot ds : snapshot.getChildren()) {
+                    TextQuestion o = ds.getValue(TextQuestion.class);
+                    if (o != null) {
+                        textQuestions.add(o);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),"DB error text",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void readTestTasksFromDB(){
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Test");
 
         itemsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(!testQuestions.isEmpty()){
+                    testQuestions.clear();
+                }
 
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     TestQuestion o = ds.getValue(TestQuestion.class);
@@ -147,11 +165,15 @@ public class EntryActivity extends AppCompatActivity {
     }
 
     private void readImageTasksFromDB(){
+
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Picture");
 
         itemsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!imageQuestions.isEmpty()){
+                    imageQuestions.clear();
+                }
 
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     ImageQuestion o = ds.getValue(ImageQuestion.class);

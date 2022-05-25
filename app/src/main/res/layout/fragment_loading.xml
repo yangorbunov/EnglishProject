@@ -5,7 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".View.MainActivity">
+    tools:context=".View.Activities.MainActivity">
+
+    <TextView
+        android:id="@+id/QuestionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text ="Loading..."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        android:fontFamily="@font/wellfleet"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <ProgressBar
         app:layout_constraintTop_toTopOf="parent"

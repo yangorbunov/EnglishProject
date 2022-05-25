@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragments.AddingTextFragment">
+    tools:context=".View.Fragments.AddingImageFragment">
 
     <LinearLayout
         android:id="@+id/l_adding_layout"
@@ -24,16 +24,16 @@
             android:fontFamily="monospace"
             android:paddingStart="20dp"
             android:paddingEnd="0dp"
-            android:text="Вопрос:"
+            android:text="Ссылка на картинку:"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
         <EditText
             android:autofillHints="question"
-            android:hint="Введите вопрос"
+            android:hint="Введите ссылку"
             android:layout_marginTop="10dp"
-            android:id="@+id/adding_text_question"
+            android:id="@+id/adding_image_question"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
@@ -69,7 +69,7 @@
             android:autofillHints="answer"
             android:hint="Введите ответ"
             android:layout_marginTop="10dp"
-            android:id="@+id/adding_text_ans"
+            android:id="@+id/adding_image_ans"
             android:layout_width="match_parent"
             android:inputType="text"
             android:fontFamily="@font/wellfleet"
@@ -79,7 +79,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button_share_text"
+        android:id="@+id/button_share_image"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         style="?android:attr/buttonBarButtonStyle"

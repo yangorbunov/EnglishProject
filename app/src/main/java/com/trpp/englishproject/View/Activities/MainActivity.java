@@ -1,4 +1,4 @@
-package com.trpp.englishproject.View;
+package com.trpp.englishproject.View.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
+import com.trpp.englishproject.*;
 
-import com.trpp.englishproject.R;
+import com.trpp.englishproject.View.Fragments.ImageQuestionFragment;
+import com.trpp.englishproject.View.Fragments.TestQuestionFragment;
+import com.trpp.englishproject.View.Fragments.TextQuestionFragment;
 import com.trpp.englishproject.ViewModel.VM;
 
 import java.util.Collections;

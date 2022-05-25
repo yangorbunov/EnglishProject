@@ -1,4 +1,4 @@
-package com.trpp.englishproject.View;
+package com.trpp.englishproject.View.Fragments;
 
 import android.os.Bundle;
 
@@ -16,8 +16,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.trpp.englishproject.Model.ImageQuestion;
-import com.trpp.englishproject.R;
+import com.trpp.englishproject.View.Activities.EntryActivity;
 import com.trpp.englishproject.ViewModel.VM;
+import com.trpp.englishproject.*;
 
 
 public class ImageQuestionFragment extends Fragment {

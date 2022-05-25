@@ -18,27 +18,27 @@
 <!--            android:name=".View.AddingActivity"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name=".View.LoadingActivity"
+            android:name=".View.Activities.LoadingActivity"
             android:exported="false"
-            android:parentActivityName=".View.EntryActivity"
+            android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".View.ResultActivity"
+            android:name=".View.Activities.ResultActivity"
             android:exported="false"
-            android:parentActivityName=".View.EntryActivity"
+            android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".View.HelpActivity"
+            android:name=".View.Activities.HelpActivity"
             android:exported="false"
             android:label="@string/help"
-            android:parentActivityName=".View.EntryActivity"
+            android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppTheme"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".View.EntryActivity"
+            android:name=".View.Activities.EntryActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"
@@ -50,11 +50,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".View.MainActivity"
+            android:name=".View.Activities.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
             android:label="@string/test"
-            android:parentActivityName=".View.EntryActivity"
+            android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppTheme"
             tools:ignore="LockedOrientationActivity" />

@@ -1,4 +1,4 @@
-package com.trpp.englishproject.View;
+package com.trpp.englishproject.View.Fragments;
 
 import android.os.Bundle;
 
@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+import com.trpp.englishproject.*;
 
 import com.trpp.englishproject.Model.TestQuestion;
-import com.trpp.englishproject.R;
+import com.trpp.englishproject.View.Activities.EntryActivity;
 import com.trpp.englishproject.ViewModel.VM;
 
 

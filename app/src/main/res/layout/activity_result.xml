@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".View.ResultActivity">
+    tools:context=".View.Activities.ResultActivity">
 
     <LinearLayout
         android:id="@+id/l_layout"

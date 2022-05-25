@@ -1,7 +1,7 @@
-package com.trpp.englishproject.View;
+package com.trpp.englishproject.View.Activities;
 
-import com.trpp.englishproject.R;
 import androidx.appcompat.app.AppCompatActivity;
+import com.trpp.englishproject.*;
 
 import android.os.Bundle;
 
