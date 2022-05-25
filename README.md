@@ -1,6 +1,6 @@
 <h1 align="center">Тест для проверки знаний английского языка</h1>
 <p align="center">
-<img src="https://img.shields.io/badge/version-1.0.0-green">
+<img src="https://img.shields.io/badge/version-1.0.0-darkblue">
 <img src="https://img.shields.io/badge/%20by-yangorbunov%2C%20kwazr%2C%20YaroslavChernov0220-red">
 </p>
 
