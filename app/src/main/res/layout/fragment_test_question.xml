@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.MainActivity">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/l_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/number_q"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:fontFamily="@font/wellfleet"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="1." />
+
+
+        <TextView
+            android:id="@+id/QuestionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text ="Who __ TRPP"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/wellfleet"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/enter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@id/rg"
+        android:fontFamily="@font/wellfleet"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:text="Choose answer:"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_1"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:text="ehfwieevkwuev"
+            android:fontFamily="@font/wellfleet"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/radio_2"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:text="ehfwieevkwuev"
+            android:fontFamily="@font/wellfleet"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/radio_3"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:text="ehfwieevkwuev"
+            android:fontFamily="@font/wellfleet"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/radio_4"
+            android:layout_width="match_parent"
+            android:text="ehfwieevkwuev"
+            android:textSize="20sp"
+            android:fontFamily="@font/wellfleet"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
