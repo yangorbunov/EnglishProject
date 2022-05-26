@@ -1,6 +1,10 @@
 package com.trpp.englishproject.Model;
 
-
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * Model class of questions, which contains question and answer.
+ */
 public class TextQuestion {
     String q;
     String ans;

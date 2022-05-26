@@ -19,7 +19,11 @@ import com.trpp.englishproject.Model.ImageQuestion;
 import com.trpp.englishproject.ViewModel.VM;
 import com.trpp.englishproject.*;
 
-
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * View class contains fragment with image view, text view and edit text.
+ */
 public class ImageQuestionFragment extends Fragment {
 
     private final int questionNo;

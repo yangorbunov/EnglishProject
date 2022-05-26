@@ -15,6 +15,11 @@ import java.util.HashMap;
 import java.util.Objects;
 import com.trpp.englishproject.R;
 
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * View class contains activity with listview of mistakes and result textview.
+ */
 public class ResultActivity extends AppCompatActivity {
 
     TextView textView, mistakesTV;

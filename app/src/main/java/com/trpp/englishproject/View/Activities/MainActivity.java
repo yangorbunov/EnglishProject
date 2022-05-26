@@ -18,6 +18,12 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.Random;
 
+
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * View class contains activity with buttons and fragment container.
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, buttonSend;

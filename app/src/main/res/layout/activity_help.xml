@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.Activities.HelpActivity"
-    android:background="@drawable/img_help">
+    android:background="@drawable/image_help">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,11 @@ import com.trpp.englishproject.ViewModel.VM;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * View class contains fragment with buttons, edit text and radio buttons.
+ */
 public class AddingTestFragment extends Fragment {
 
     EditText question;

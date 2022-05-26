@@ -9,6 +9,12 @@ import android.widget.ProgressBar;
 import com.trpp.englishproject.*;
 
 
+/**
+ * @author Egor Zotov
+ * @version 1.1
+ * Model class of questions, which contains progress bar.
+ * It is made to provide time to load from database.
+ */
 public class LoadingActivity extends AppCompatActivity {
 
     ProgressBar progressBar;

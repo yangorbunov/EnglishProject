@@ -1,5 +1,10 @@
 package com.trpp.englishproject.Model;
 
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * Model class of users, which user name and password.
+ */
 public class User {
     String userName;
     String password;
