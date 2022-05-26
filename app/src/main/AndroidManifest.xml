@@ -14,9 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EnglishProject">
-<!--        <activity-->
-<!--            android:name=".View.AddingActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".View.Activities.AddingActivity"
+            android:parentActivityName=".View.Activities.EntryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".View.Activities.LoadingActivity"
             android:exported="false"
@@ -45,7 +48,6 @@
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

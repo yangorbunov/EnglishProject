@@ -5,10 +5,8 @@ import com.trpp.englishproject.R;
 import com.trpp.englishproject.View.Fragments.AddingImageFragment;
 import com.trpp.englishproject.View.Fragments.AddingTestFragment;
 import com.trpp.englishproject.View.Fragments.AddingTextFragment;
-import com.trpp.englishproject.View.Fragments.TextQuestionFragment;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 

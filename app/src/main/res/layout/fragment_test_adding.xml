@@ -53,13 +53,13 @@
             android:paddingEnd="0dp"
             android:text="Ответы (отметьте правильный):"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/rg_adding_test"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -68,91 +68,79 @@
         app:layout_constraintTop_toBottomOf="@id/l_adding_adding_layout"
         app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <RadioGroup
+        android:id="@+id/rg_adding_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/radio_1_adding"
             android:layout_width="wrap_content"
             android:textSize="20sp"
             android:fontFamily="@font/wellfleet"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:hint="Вопрос 1"
-            android:id="@+id/adding_test_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="answer" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"/>
 
             <RadioButton
                 android:id="@+id/radio_2_adding"
                 android:layout_width="wrap_content"
                 android:textSize="20sp"
                 android:fontFamily="@font/wellfleet"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:id="@+id/adding_test_2"
-                android:hint="Вопрос 2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="answer" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:layout_height="50dp"/>
 
             <RadioButton
                 android:id="@+id/radio_3_adding"
                 android:layout_width="wrap_content"
                 android:textSize="20sp"
                 android:fontFamily="@font/wellfleet"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:id="@+id/adding_test_3"
-                android:hint="Вопрос 3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="answer" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:layout_height="50dp"/>
 
             <RadioButton
                 android:id="@+id/radio_4_adding"
                 android:layout_width="wrap_content"
                 android:textSize="20sp"
                 android:fontFamily="@font/wellfleet"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"/>
+
+
+    </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:hint="Ответ 1"
+                android:id="@+id/adding_test_1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="answer" />
+
+            <EditText
+                android:id="@+id/adding_test_2"
+                android:hint="Ответ 2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="answer" />
+
+            <EditText
+                android:id="@+id/adding_test_3"
+                android:hint="Ответ 3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="answer" />
 
             <EditText
                 android:id="@+id/adding_test_4"
-                android:hint="Вопрос 4"
+                android:hint="Ответ 4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:autofillHints="answer" />
+
 
         </LinearLayout>
 
-    </RadioGroup>
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_share_test"

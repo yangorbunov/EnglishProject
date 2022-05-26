@@ -3,6 +3,7 @@ package com.trpp.englishproject.View.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,13 +20,14 @@ import com.trpp.englishproject.Model.ImageQuestion;
 import com.trpp.englishproject.Model.TestQuestion;
 import com.trpp.englishproject.Model.TextQuestion;
 import com.trpp.englishproject.Model.User;
+import com.trpp.englishproject.ViewModel.VM;
 
 import java.util.ArrayList;
 
 public class EntryActivity extends AppCompatActivity {
 
     Button buttonHelp, buttonStart, buttonAdd;
-    AppCompatEditText userNameET, passWordET;
+    EditText userNameET, passWordET;
     public static ArrayList<TextQuestion> textQuestions;
     public static ArrayList<TestQuestion> testQuestions;
     public static ArrayList<ImageQuestion> imageQuestions;
@@ -59,44 +61,34 @@ public class EntryActivity extends AppCompatActivity {
         });
 
         buttonStart.setOnClickListener(view -> {
-            Toast.makeText(this,
-                    "XD",
-                    Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(EntryActivity.this, LoadingActivity.class);
             startActivity(intent);
         });
 
-        buttonAdd.setOnClickListener(view -> {
-            readUsersFromDB();
-
-            if (usersList.isEmpty()){
-                Toast.makeText(this,
-                        "XD XD",
-                        Toast.LENGTH_SHORT).show();
-            }
-            for (User u : usersList) {
+            buttonAdd.setOnClickListener(view -> {
                 if (userNameET.getText() != null && passWordET.getText() != null) {
                     if (!userNameET.getText().toString().equals("") && !passWordET.getText().toString().equals("")) {
-                        if (u.getUserName().equals(userNameET.getText().toString()) &&
-                                u.getPassword().equals(passWordET.getText().toString())) {
-                            Intent intent = new Intent(EntryActivity.this, AddingActivity.class);
-                            startActivity(intent);
-                        }
-                        Toast.makeText(this,
-                                "Неверный логин или пароль",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                    Toast.makeText(this,
-                            "Для добавления вопросов введите логин и пароль",
-                            Toast.LENGTH_SHORT).show();
-                }
-                Toast.makeText(this,
-                        "XD",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+                        if (VM.checkUser(userNameET.getText().toString())) {
+                            User user = VM.getUserByUserName(userNameET.getText().toString());
+                            if (user.getPassword().equals(passWordET.getText().toString())) {
+                                Intent intent = new Intent(EntryActivity.this, AddingActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(this,
+                                        "Неверный пароль",
+                                        Toast.LENGTH_SHORT).show(); }
 
-    }
+                        } else {
+                            Toast.makeText(this,
+                                    "Пользователь не найден",
+                                    Toast.LENGTH_SHORT).show(); }
+                        } else {
+                            Toast.makeText(this,
+                                    "Для добавления вопросов введите логин и пароль",
+                                    Toast.LENGTH_SHORT).show(); }
+                }
+            });
+        }
 
     private void readUsersFromDB(){
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Users");

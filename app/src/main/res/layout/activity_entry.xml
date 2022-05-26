@@ -59,28 +59,33 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <EditText
             android:id="@+id/user_name"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:hint="Введите имя пользователя"
+            android:fontFamily="@font/wellfleet"
             android:textCursorDrawable="@drawable/cursor_edit_text"
             android:backgroundTint="@color/button_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="User"
-            tools:ignore="HardcodedText" />
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/password"
-            android:hint="Введите пароль"
-            app:backgroundTint="@color/button_color"
-            android:textCursorDrawable="@drawable/cursor_edit_text"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="Password"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:hint="Введите пароль"
+                app:backgroundTint="@color/button_color"
+                android:textCursorDrawable="@drawable/cursor_edit_text"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/wellfleet"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Password"
+                tools:ignore="HardcodedText"
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/buttonAdd"

@@ -15,7 +15,9 @@ import androidx.fragment.app.Fragment;
 import com.trpp.englishproject.R;
 import com.trpp.englishproject.ViewModel.VM;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Stream;
 
 public class AddingTestFragment extends Fragment {
 
@@ -24,7 +26,6 @@ public class AddingTestFragment extends Fragment {
     RadioButton rb1, rb2, rb3, rb4;
     EditText et1, et2, et3, et4;
     Button shareBtn;
-    VM vm;
 
 
     public AddingTestFragment() {
@@ -61,25 +62,30 @@ public class AddingTestFragment extends Fragment {
 
             if (question.getText() != null &&
             et1.getText() != null && et2.getText() != null &&
-            et3.getText() != null && et4.getText() != null){
-                if (rb1.isChecked()){
-                    pushTask(et1.getText().toString());
+            et3.getText() != null && et4.getText() != null) {
+                if (!question.getText().toString().equals("") &&
+                        !et1.getText().toString().equals("") && !et2.getText().toString().equals("") &&
+                        !et3.getText().toString().equals("") && !et4.getText().toString().equals("")) {
+                    Stream stream = Stream.of(et1.getText().toString(),et2.getText().toString(),
+                            et3.getText().toString(),et4.getText().toString());
+                    if (VM.checkTestDuplicates(stream)) {
+                        if (rb1.isChecked()) {
+                            pushTask(et1.getText().toString());
+                        } else if (rb2.isChecked()) {
+                            pushTask(et2.getText().toString());
+                        } else if (rb3.isChecked()) {
+                            pushTask(et3.getText().toString());
+                        } else if (rb4.isChecked()) {
+                            pushTask(et4.getText().toString());
+                        } else {
+                            Toast.makeText(requireActivity(), "Выберите правильный вариант ответа", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(requireActivity(), "Ответы не должны совпадать", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(requireActivity(), "Введите вопрос и варианты ответа", Toast.LENGTH_SHORT).show();
                 }
-                if (rb2.isChecked()){
-                    pushTask(et2.getText().toString());
-                }
-                if (rb3.isChecked()){
-                    pushTask(et3.getText().toString());
-                }
-                if (rb4.isChecked()){
-                    pushTask(et4.getText().toString());
-                }
-                else {
-                    Toast.makeText(requireActivity(),"Выберите правильный вариант ответа", Toast.LENGTH_SHORT).show();
-                }
-            }
-            else {
-                Toast.makeText(requireActivity(),"Введите вопрос и варианты ответа", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -92,6 +98,7 @@ public class AddingTestFragment extends Fragment {
         map.put("a2",et2.getText().toString());
         map.put("a3",et3.getText().toString());
         map.put("a4",et4.getText().toString());
-        vm.writeTestQuestionOnDB(question.getText().toString(),map,correctAnswer);
+        VM.writeTestQuestionOnDB(question.getText().toString(),map,correctAnswer);
+        Toast.makeText(requireActivity(), "Вопрос добавлен", Toast.LENGTH_SHORT).show();
     }
 }

@@ -18,7 +18,6 @@ public class AddingTextFragment extends Fragment {
 
     EditText question, answer;
     Button shareBtn;
-    VM vm;
 
 
     public AddingTextFragment() {
@@ -43,12 +42,13 @@ public class AddingTextFragment extends Fragment {
         shareBtn = view.findViewById(R.id.button_share_text);
 
         shareBtn.setOnClickListener(v -> {
-            if (answer.getText() != null && question.getText() != null){
-                Toast.makeText(requireActivity(),"Вопрос добавлен", Toast.LENGTH_SHORT).show();
-                vm.writeTextQuestionOnDB(question.getText().toString(),answer.getText().toString());
-            }
-            else {
-                Toast.makeText(requireActivity(),"Введите вопрос и ответ", Toast.LENGTH_SHORT).show();
+            if (answer.getText() != null && question.getText() != null) {
+                if (!answer.getText().toString().equals("") && !question.getText().toString().equals("")) {
+                    Toast.makeText(requireActivity(), "Вопрос добавлен", Toast.LENGTH_SHORT).show();
+                    VM.writeTextQuestionOnDB(question.getText().toString(), answer.getText().toString());
+                } else {
+                    Toast.makeText(requireActivity(), "Введите вопрос и ответ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return  view;
