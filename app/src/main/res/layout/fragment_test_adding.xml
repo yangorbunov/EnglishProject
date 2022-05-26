@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/l_adding_adding_layout"
-        android:layout_marginTop="20dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -61,12 +61,14 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/button_share_test"
         app:layout_constraintTop_toBottomOf="@id/l_adding_adding_layout"
+
         app:layout_constraintStart_toStartOf="parent">
 
     <RadioGroup

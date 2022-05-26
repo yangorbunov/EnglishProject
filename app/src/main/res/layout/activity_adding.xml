@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/enter_type"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="0dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintStart_toStartOf="parent">
@@ -64,7 +64,7 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:layout_constraintTop_toBottomOf="@id/rg_choose"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
