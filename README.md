@@ -21,9 +21,10 @@
 
 <p align="center">
 <img src="images/1eng.png">
+</p>
+<p align="center">
 <img src="images/2eng.png">
 </p>
-
 <h1 align="center">Зависимости проекта</h1>
 <p>dependencies {
 
