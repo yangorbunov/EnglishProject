@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle"  android:tint="@color/flag_img" android:padding="20dp">
+
+        </shape>
+    </item>
+    <item android:drawable="@drawable/img_rnd" android:width="48dp" android:height="48dp" android:gravity="center"  />
+
+    <item android:drawable="@drawable/icon_message" android:start="2dp" android:bottom="2dp" android:width="20dp" android:height="20dp" android:gravity="bottom|end"/>
+</layer-list>
