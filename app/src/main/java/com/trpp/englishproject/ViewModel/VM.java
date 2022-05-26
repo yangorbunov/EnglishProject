@@ -22,6 +22,11 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * ViewModel class, which contains static lists ans live data hash map with test results.
+ */
 public class VM extends ViewModel {
 
     MutableLiveData<HashMap<Integer,Boolean>> answerData;
@@ -31,6 +36,11 @@ public class VM extends ViewModel {
     public static ArrayList<User> usersList = new ArrayList<>();
     static FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
+    /**
+     *
+     * Getter method for live data
+     * @return answerData - value of live data
+     */
     public MutableLiveData<HashMap<Integer,Boolean>> getAnswerList() {
         if (answerData == null){
             answerData = new MutableLiveData<>();
@@ -38,6 +48,11 @@ public class VM extends ViewModel {
         return answerData;
     }
 
+    /**
+     * Writes added text question to database
+     * @param answer - users answer for question
+     * @param cor - boolean value if answer is correct
+     */
     public void setAnswer(int answer, Boolean cor) {
         if (answerData == null){
             answerData = new MutableLiveData<>();
@@ -55,6 +70,11 @@ public class VM extends ViewModel {
         }
     }
 
+    /**
+     * Writes added text question to database
+     * @param question - added question
+     * @param answer - added answer
+     */
     public static void writeTextQuestionOnDB (String question, String answer){
         TextQuestion textQuestion = new TextQuestion();
         textQuestion.setQ(question);
@@ -64,6 +84,12 @@ public class VM extends ViewModel {
         newTextQRef.setValue(textQuestion);
     }
 
+    /**
+     * Writes added test question to database
+     * @param question - added question
+     * @param answers - added map of answers
+     * @param correctAnswer - added correct answer
+     */
     public static void writeTestQuestionOnDB (String question, HashMap<String,String> answers, String correctAnswer){
         TestQuestion testQuestion = new TestQuestion();
         testQuestion.setQ(question);
@@ -74,6 +100,11 @@ public class VM extends ViewModel {
         newTextQRef.setValue(testQuestion);
     }
 
+    /**
+     * Writes added image question to database
+     * @param imageUri - added image URL
+     * @param answer - added correct answer
+     */
     public static void writeImageQuestionOnDB (String imageUri, String answer){
         ImageQuestion imageQuestion = new ImageQuestion();
         imageQuestion.setQ(imageUri);
@@ -83,6 +114,11 @@ public class VM extends ViewModel {
         newTextQRef.setValue(imageQuestion);
     }
 
+    /**
+     * Finds and returns user by userName if exists
+     * @param userName - value if userName field
+     * @return user - User class object
+     */
     public static User getUserByUserName(String userName){
         User user = new User();
         for (User u : usersList){
@@ -93,6 +129,11 @@ public class VM extends ViewModel {
         return user;
     }
 
+    /**
+     * Finds and returns true if user exists
+     * @param user - User class object
+     * @return ifCorrect - Boolean method result
+     */
     public static boolean checkUser (String user){
         boolean ifCorrect = false;
         for (User u : usersList){
@@ -104,11 +145,19 @@ public class VM extends ViewModel {
         return ifCorrect;
     }
 
+    /**
+     * Finds and returns true is answers do not duplicate
+     * @param list - list of answers
+     * @return ifCorrect - Boolean method result
+     */
     public static boolean checkTestDuplicates(ArrayList<String> list){
         HashSet<String> set = new HashSet<>(list);
         return list.size() == set.size();
     }
 
+    /**
+     * Reads users from database
+     */
     public static void readUsersDB(){
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Users");
 
@@ -132,6 +181,9 @@ public class VM extends ViewModel {
         });
     }
 
+    /**
+     * Reads text questions from database
+     */
     public static void readTextDB(){
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Text");
 
@@ -155,6 +207,9 @@ public class VM extends ViewModel {
         });
     }
 
+    /**
+     * Reads test questions from database
+     */
     public static void readTestDB(){
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Test");
 
@@ -178,6 +233,9 @@ public class VM extends ViewModel {
         });
     }
 
+    /**
+     * Reads image questions from database
+     */
     public static void readImageDB(){
         DatabaseReference itemsRef = firebaseDatabase.getReference().child("Picture");
 

@@ -15,6 +15,11 @@ import com.trpp.englishproject.*;
 import com.trpp.englishproject.ViewModel.VM;
 
 
+/**
+ * @author Yaroslav Chernov
+ * @version 1.0
+ * View class contains fragment with button and edit text.
+ */
 public class AddingImageFragment extends Fragment {
 
     EditText question, answer;

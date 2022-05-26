@@ -1,7 +1,11 @@
 package com.trpp.englishproject.Model;
-
 import java.util.HashMap;
 
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * Model class of questions, which contains question, map of answers and correct answer.
+ */
 public class TestQuestion {
     private String q;
     private HashMap<String,String> ans;

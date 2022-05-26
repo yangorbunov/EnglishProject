@@ -17,5 +17,6 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager --update
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
     "platform-tools"
+RUN git clone https://github.com/yangorbunov/EnglishProject.git
 
 RUN apt-get update && apt-get install build-essential -y && apt-get install file -y && apt-get install apt-utils -y

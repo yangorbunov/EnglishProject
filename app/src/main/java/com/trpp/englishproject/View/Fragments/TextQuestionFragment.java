@@ -18,7 +18,11 @@ import com.trpp.englishproject.Model.TextQuestion;
 import com.trpp.englishproject.ViewModel.VM;
 
 
-
+/**
+ * @author Yaroslav Chernov
+ * @version 1.0
+ * View class contains fragment with text view and edit text.
+ */
 public class TextQuestionFragment extends Fragment {
 
     private final int questionNo;

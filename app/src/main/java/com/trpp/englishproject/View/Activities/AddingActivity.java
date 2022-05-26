@@ -10,6 +10,11 @@ import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * View class contains activity with radio buttons and fragment container
+ */
 public class AddingActivity extends AppCompatActivity {
 
     RadioGroup rg;

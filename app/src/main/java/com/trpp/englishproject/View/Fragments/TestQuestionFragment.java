@@ -16,7 +16,11 @@ import com.trpp.englishproject.*;
 import com.trpp.englishproject.Model.TestQuestion;
 import com.trpp.englishproject.ViewModel.VM;
 
-
+/**
+ * @author Yaroslav Chernov
+ * @version 1.0
+ * View class contains fragment with text view and radio buttons.
+ */
 public class TestQuestionFragment extends Fragment {
 
     private final int questionNo;

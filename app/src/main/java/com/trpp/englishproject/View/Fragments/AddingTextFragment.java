@@ -14,6 +14,11 @@ import android.widget.Toast;
 import com.trpp.englishproject.R;
 import com.trpp.englishproject.ViewModel.VM;
 
+/**
+ * @author Yaroslav Chernov
+ * @version 1.0
+ * View class contains fragment with button and edit text.
+ */
 public class AddingTextFragment extends Fragment {
 
     EditText question, answer;

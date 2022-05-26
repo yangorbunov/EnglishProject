@@ -6,24 +6,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatEditText;
 import com.trpp.englishproject.*;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.trpp.englishproject.Model.ImageQuestion;
-import com.trpp.englishproject.Model.TestQuestion;
-import com.trpp.englishproject.Model.TextQuestion;
 import com.trpp.englishproject.Model.User;
 import com.trpp.englishproject.ViewModel.VM;
 
-import java.util.ArrayList;
-
+/**
+ * @author Yan Gorbunov
+ * @version 1.0
+ * View class of questions, which contains buttons and authorization checking.
+ */
 public class EntryActivity extends AppCompatActivity {
 
     Button buttonHelp, buttonStart, buttonAdd;
