@@ -15,6 +15,7 @@ import com.trpp.englishproject.View.Fragments.TextQuestionFragment;
 import com.trpp.englishproject.ViewModel.VM;
 
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 checkAnswers();
 
                 if (activeTaskId < 4) {
-                    buttonSend.setText("Next");
+                    buttonSend.setText(R.string.next_task);
                     goToTextQuestion();
                 } else if (activeTaskId < 8) {
-                    buttonSend.setText("Next");
+                    buttonSend.setText(R.string.next_task);
                     goToTestQuestion();
                 } else if (activeTaskId < 10) {
-                    buttonSend.setText("Next");
+                    buttonSend.setText(R.string.next_task);
                     if (activeTaskId == 9) {
-                        buttonSend.setText("Finish");
+                        buttonSend.setText(R.string.finish);
                     }
                     goToImageQuestion();
                 } else {
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn1.setOnClickListener(view -> {
                 activeTaskId = 1;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TextQuestionFragment.newInstance(1))
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn2.setOnClickListener(view -> {
                 activeTaskId = 2;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TextQuestionFragment.newInstance(2))
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn3.setOnClickListener(view -> {
                 activeTaskId = 3;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TextQuestionFragment.newInstance(3))
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn4.setOnClickListener(view -> {
                 activeTaskId = 4;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TextQuestionFragment.newInstance(4))
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn5.setOnClickListener(view -> {
                 activeTaskId = 5;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TestQuestionFragment.newInstance(5))
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn6.setOnClickListener(view -> {
                 activeTaskId = 6;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TestQuestionFragment.newInstance(6))
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn7.setOnClickListener(view -> {
                 activeTaskId = 7;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TestQuestionFragment.newInstance(7))
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn8.setOnClickListener(view -> {
                 activeTaskId = 8;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, TestQuestionFragment.newInstance(8))
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn9.setOnClickListener(view -> {
                 activeTaskId = 9;
-                buttonSend.setText("Next");
+                buttonSend.setText(R.string.next_task);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, ImageQuestionFragment.newInstance(9))
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
             btn10.setOnClickListener(view -> {
                 activeTaskId = 10;
-                buttonSend.setText("Finish");
+                buttonSend.setText(R.string.finish);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, ImageQuestionFragment.newInstance(10))
@@ -195,25 +196,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void swapQuestions() {
         for (int i = 0; i < 10; i++){
-            int j = new Random().nextInt(EntryActivity.textQuestions.size());
-            int k = new Random().nextInt(EntryActivity.textQuestions.size());
+            int j = new Random().nextInt(VM.textQuestions.size());
+            int k = new Random().nextInt(VM.textQuestions.size());
             if (j != k) {
-                Collections.swap(EntryActivity.textQuestions, j, k);
+                Collections.swap(VM.textQuestions, j, k);
             }
         }
         for (int i = 0; i < 10; i++){
-            int j = new Random().nextInt(EntryActivity.testQuestions.size());
-            int k = new Random().nextInt(EntryActivity.testQuestions.size());
+            int j = new Random().nextInt(VM.testQuestions.size());
+            int k = new Random().nextInt(VM.testQuestions.size());
             if (j != k) {
-                Collections.swap(EntryActivity.testQuestions, j, k);
+                Collections.swap(VM.testQuestions, j, k);
             }
         }
 
         for (int i = 0; i < 10; i++){
-            int j = new Random().nextInt(EntryActivity.imageQuestions.size());
-            int k = new Random().nextInt(EntryActivity.imageQuestions.size());
+            int j = new Random().nextInt(VM.imageQuestions.size());
+            int k = new Random().nextInt(VM.imageQuestions.size());
             if (j != k) {
-                Collections.swap(EntryActivity.imageQuestions, j, k);
+                Collections.swap(VM.imageQuestions, j, k);
             }
         }
     }
@@ -223,61 +224,61 @@ public class MainActivity extends AppCompatActivity {
         if(vm.getAnswerList() != null && vm.getAnswerList().getValue() != null) {
             if (vm.getAnswerList().getValue().containsKey(1)) {
                 btn1.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(1).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(1), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(2)) {
                 btn2.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(2).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(2), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(3)) {
                 btn3.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(3).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(3), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(4)) {
                 btn4.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(4).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(4), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(5)) {
                 btn5.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(5).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(5), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(6)) {
                 btn6.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(6).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(6), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(7)) {
                 btn7.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(7).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(7), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(8)) {
                 btn8.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(8).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(8), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(9)) {
                 btn9.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(9).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(9), true)) {
                     val += 1;
                 }
             }
             if (vm.getAnswerList().getValue().containsKey(10)) {
                 btn10.setBackgroundColor(getResources().getColor(R.color.blue));
-                if (vm.getAnswerList().getValue().get(10).equals(true)) {
+                if (Objects.equals(vm.getAnswerList().getValue().get(10), true)) {
                     val += 1;
                 }
             }

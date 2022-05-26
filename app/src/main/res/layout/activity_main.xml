@@ -8,6 +8,7 @@
 
     <HorizontalScrollView
         app:layout_constraintTop_toTopOf="parent"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
@@ -29,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/one"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/two"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -57,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/three"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -72,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/four"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -86,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/five"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -100,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/six"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -114,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/seven"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -128,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/eight"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -142,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
-                
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/nine"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -187,9 +188,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="@color/gray"
-        android:text="Next"
-        android:textColor="@color/black"
+        android:backgroundTint="@color/button_color"
+        android:fontFamily="@font/wellfleet"
+        android:text="@string/next_task"
+        android:textColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:textSize="20sp"
         app:cornerRadius="4dp"
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,11 +10,11 @@
         android:id="@+id/buttonStart"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="420dp"
         android:backgroundTint="@color/button_color"
         android:textSize="20sp"
         android:text="@string/start"
+        android:fontFamily="@font/wellfleet"
         android:padding="10dp"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +31,7 @@
         android:backgroundTint="@color/button_color"
         android:textSize="20sp"
         android:text="@string/help"
+        android:fontFamily="@font/wellfleet"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,19 +64,18 @@
             android:id="@+id/user_name"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:hint="Введите имя пользователя"
+            android:hint="@string/enter_user_name"
             android:fontFamily="@font/wellfleet"
             android:textCursorDrawable="@drawable/cursor_edit_text"
             android:backgroundTint="@color/button_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="User"
-            tools:ignore="HardcodedText"
             android:inputType="textPersonName"/>
 
             <EditText
                 android:id="@+id/password"
-                android:hint="Введите пароль"
+                android:hint="@string/enter_password"
                 app:backgroundTint="@color/button_color"
                 android:textCursorDrawable="@drawable/cursor_edit_text"
                 android:layout_marginStart="10dp"
@@ -84,7 +84,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="Password"
-                tools:ignore="HardcodedText"
                 android:inputType="textPassword" />
 
             <Button
@@ -97,6 +96,7 @@
                 android:backgroundTint="@color/button_color"
                 android:textSize="20sp"
                 app:cornerRadius="8dp"
+                android:fontFamily="@font/wellfleet"
                 android:text="@string/add"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

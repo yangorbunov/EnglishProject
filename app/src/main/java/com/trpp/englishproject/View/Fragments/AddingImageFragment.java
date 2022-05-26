@@ -44,10 +44,10 @@ public class AddingImageFragment extends Fragment {
             if (answer.getText() != null && question.getText() != null) {
                 if (!answer.getText().toString().equals("") && !question.getText().toString().equals("")) {
                     Toast.makeText(requireActivity(), "Вопрос добавлен", Toast.LENGTH_SHORT).show();
-                VM.writeTextQuestionOnDB(question.getText().toString(), answer.getText().toString());
+                VM.writeImageQuestionOnDB((question.getText().toString()), answer.getText().toString());
             }
             else {
-                    Toast.makeText(requireActivity(), "Введите вопрос и ответ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireActivity(), "Введите ссылку и ответ", Toast.LENGTH_SHORT).show();
                 }
             }
         });

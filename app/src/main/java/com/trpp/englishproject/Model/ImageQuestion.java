@@ -1,6 +1,5 @@
 package com.trpp.englishproject.Model;
 
-import java.util.HashMap;
 
 public class ImageQuestion {
     private String q;

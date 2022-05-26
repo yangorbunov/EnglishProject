@@ -22,15 +22,13 @@
             android:paddingStart="20dp"
             android:paddingEnd="0dp"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:text="1." />
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/QuestionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text ="Who __ TRPP"
             app:layout_constraintTop_toTopOf="parent"
             android:fontFamily="@font/wellfleet"
             android:textColor="@color/black"
@@ -50,7 +48,7 @@
         android:fontFamily="@font/wellfleet"
         android:paddingStart="20dp"
         android:paddingEnd="0dp"
-        android:text="Choose answer:"
+        android:text="@string/choose_answer"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -71,27 +69,23 @@
             android:id="@+id/radio_1"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:text="ehfwieevkwuev"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/radio_2"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:text="ehfwieevkwuev"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/radio_3"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:text="ehfwieevkwuev"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/radio_4"
             android:layout_width="match_parent"
-            android:text="ehfwieevkwuev"
             android:textSize="20sp"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>

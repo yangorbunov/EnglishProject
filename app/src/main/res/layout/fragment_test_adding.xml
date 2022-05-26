@@ -21,41 +21,42 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/wellfleet"
             android:paddingStart="20dp"
             android:paddingEnd="0dp"
-            android:text="Вопрос:"
+            android:text="@string/question"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            />
 
         <EditText
             android:autofillHints="question"
-            android:hint="Введите вопрос"
+            android:hint="@string/enter_question"
             android:id="@+id/adding_test_question"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:inputType="text"
             android:fontFamily="@font/wellfleet"
+            android:textCursorDrawable="@drawable/cursor_edit_text"
+            android:backgroundTint="@color/button_color"
             android:textSize="18sp"
             android:layout_height="wrap_content"
-            android:labelFor="@id/text_ans" />
+            android:labelFor="@id/text_ans"
+            tools:ignore="TextFields" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
             android:paddingStart="20dp"
             android:layout_marginTop="20dp"
             android:paddingEnd="0dp"
-            android:text="Ответы (отметьте правильный):"
+            android:fontFamily="@font/wellfleet"
+            android:text="@string/answers_mark"
             android:textColor="@color/black"
             android:textSize="17sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,33 +110,51 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
+
             <EditText
-                android:hint="Ответ 1"
                 android:id="@+id/adding_test_1"
+                android:hint="@string/answer_one"
+                android:fontFamily="@font/wellfleet"
+                android:textCursorDrawable="@drawable/cursor_edit_text"
+                android:backgroundTint="@color/button_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:autofillHints="answer" />
+                android:autofillHints="answer"
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/adding_test_2"
-                android:hint="Ответ 2"
+                android:hint="@string/answer_two"
+                android:fontFamily="@font/wellfleet"
+                android:textCursorDrawable="@drawable/cursor_edit_text"
+                android:backgroundTint="@color/button_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:autofillHints="answer" />
+                android:autofillHints="answer"
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/adding_test_3"
-                android:hint="Ответ 3"
+                android:hint="@string/answer_three"
+                android:fontFamily="@font/wellfleet"
+                android:textCursorDrawable="@drawable/cursor_edit_text"
+                android:backgroundTint="@color/button_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:autofillHints="answer" />
+                android:autofillHints="answer"
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/adding_test_4"
-                android:hint="Ответ 4"
+                android:hint="@string/answer_four"
+                android:fontFamily="@font/wellfleet"
+                android:textCursorDrawable="@drawable/cursor_edit_text"
+                android:backgroundTint="@color/button_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:autofillHints="answer" />
+                android:autofillHints="answer"
+                android:inputType="text"/>
 
 
         </LinearLayout>
@@ -151,12 +170,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="@color/gray"
-        android:text="Share"
-        android:textColor="@color/black"
+        android:backgroundTint="@color/button_color"
         android:textSize="20sp"
-        app:cornerRadius="4dp"
-        tools:ignore="HardcodedText" />
+        app:cornerRadius="8dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/wellfleet"
+        android:text="@string/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
 

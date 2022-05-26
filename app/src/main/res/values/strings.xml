@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">English Project</string>
+    <string name="app_name">English</string>
 
-    <string name="start">Начать</string>
-    <string name="help">Помощь</string>
-    <string name="exit">Выход</string>
+    <string name="start">Start</string>
+    <string name="help">Help</string>
     <string name="test">Тест</string>
-    <string name="add">Добавить вопросы</string>
+    <string name="add">Add task</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -18,4 +17,42 @@
     <string name="ten">10</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="img_desc">What is depicted in this picture?</string>
+
+    <string name="text_question">Text question</string>
+    <string name="test_question">Test question</string>
+    <string name="image_question">Image question</string>
+
+    <string name="next_task">Next</string>
+
+
+    <string name="image_link">Image link:</string>
+    <string name="enter_image_link">Введите ссылку на картинку</string>
+
+    <string name="answer">Answer:</string>
+    <string name="enter_answer">Введите ответ</string>
+
+    <string name="enter_user_name">Введите имя пользователя</string>
+    <string name="enter_password">Введите пароль</string>
+
+    <string name="question">Question:</string>
+    <string name="enter_question">Введите вопрос</string>
+
+    <string name="answers_mark">Answers (mark right one):</string>
+
+    <string name="answer_one">Ответ 1</string>
+    <string name="answer_two">Ответ 2</string>
+    <string name="answer_three">Ответ 3</string>
+    <string name="answer_four">Ответ 4</string>
+
+    <string name="share">SHARE</string>
+
+    <string name="loading">Loading…</string>
+
+    <string name="choose_answer">Choose answer:</string>
+
+    <string name="no_mistakes">Congratulations! No mistakes</string>
+
+    <string name="finish">Finish</string>
+
+
 </resources>

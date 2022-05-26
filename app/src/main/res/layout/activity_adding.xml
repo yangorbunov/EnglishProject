@@ -37,21 +37,21 @@
             android:id="@+id/radio_ch_1"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:text="Text question"
+            android:text="@string/text_question"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/radio_ch_2"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:text="Test question"
+            android:text="@string/test_question"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/radio_ch_3"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:text="Image question"
+            android:text="@string/image_question"
             android:fontFamily="@font/wellfleet"
             android:layout_height="wrap_content"/>
 
@@ -66,8 +66,7 @@
         app:layout_constraintTop_toBottomOf="@id/rg_choose"
         android:layout_marginTop="240dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

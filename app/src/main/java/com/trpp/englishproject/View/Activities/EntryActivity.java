@@ -28,20 +28,12 @@ public class EntryActivity extends AppCompatActivity {
 
     Button buttonHelp, buttonStart, buttonAdd;
     EditText userNameET, passWordET;
-    public static ArrayList<TextQuestion> textQuestions;
-    public static ArrayList<TestQuestion> testQuestions;
-    public static ArrayList<ImageQuestion> imageQuestions;
-    public static ArrayList<User> usersList;
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
-        textQuestions = new ArrayList<>();
-        testQuestions = new ArrayList<>();
-        imageQuestions = new ArrayList<>();
-        usersList = new ArrayList<>();
 
         buttonHelp = findViewById(R.id.buttonHelp);
         buttonStart = findViewById(R.id.buttonStart);
@@ -49,10 +41,10 @@ public class EntryActivity extends AppCompatActivity {
         userNameET = findViewById(R.id.user_name);
         passWordET = findViewById(R.id.password);
 
-        readTextTasksFromDB();
-        readTestTasksFromDB();
-        readImageTasksFromDB();
-        readUsersFromDB();
+        VM.readTextDB();
+        VM.readTestDB();
+        VM.readImageDB();
+        VM.readUsersDB();
 
 
         buttonHelp.setOnClickListener(view -> {
@@ -89,95 +81,4 @@ public class EntryActivity extends AppCompatActivity {
                 }
             });
         }
-
-    private void readUsersFromDB(){
-        DatabaseReference itemsRef = firebaseDatabase.getReference().child("Users");
-
-        itemsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for(DataSnapshot ds : snapshot.getChildren()) {
-                    User u = ds.getValue(User.class);
-                    if (u != null) {
-                        usersList.add(u);
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"DB error user",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void readTextTasksFromDB(){
-        DatabaseReference itemsRef = firebaseDatabase.getReference().child("Text");
-
-        itemsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for(DataSnapshot ds : snapshot.getChildren()) {
-                    TextQuestion o = ds.getValue(TextQuestion.class);
-                    if (o != null) {
-                        textQuestions.add(o);
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"DB error text",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void readTestTasksFromDB(){
-        DatabaseReference itemsRef = firebaseDatabase.getReference().child("Test");
-
-        itemsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!testQuestions.isEmpty()){
-                    testQuestions.clear();
-                }
-
-                for(DataSnapshot ds : snapshot.getChildren()) {
-                    TestQuestion o = ds.getValue(TestQuestion.class);
-                    if (o != null) {
-                        testQuestions.add(o);
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"DB error test",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void readImageTasksFromDB(){
-
-        DatabaseReference itemsRef = firebaseDatabase.getReference().child("Picture");
-
-        itemsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!imageQuestions.isEmpty()){
-                    imageQuestions.clear();
-                }
-
-                for(DataSnapshot ds : snapshot.getChildren()) {
-                    ImageQuestion o = ds.getValue(ImageQuestion.class);
-                    if (o != null) {
-                        imageQuestions.add(o);
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"DB error image",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }

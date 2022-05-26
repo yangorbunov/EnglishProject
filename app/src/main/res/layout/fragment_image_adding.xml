@@ -21,27 +21,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/wellfleet"
             android:paddingStart="20dp"
             android:paddingEnd="0dp"
-            android:text="Ссылка на картинку:"
+            android:text="@string/image_link"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:textStyle="bold" />
+
         <EditText
-            android:autofillHints="question"
-            android:hint="Введите ссылку"
-            android:layout_marginTop="10dp"
             android:id="@+id/adding_image_question"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:inputType="text"
+            android:hint="@string/enter_image_link"
             android:fontFamily="@font/wellfleet"
             android:textSize="18sp"
+            android:textCursorDrawable="@drawable/cursor_edit_text"
+            android:backgroundTint="@color/button_color"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:labelFor="@id/text_ans" />
+            android:autofillHints="User"
+            tools:ignore="TextFields" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,39 +60,41 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="Ответ:"
+            android:fontFamily="@font/wellfleet"
+            android:text="@string/answer"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            android:textStyle="bold" />
+
         <EditText
             android:autofillHints="answer"
-            android:hint="Введите ответ"
+            android:hint="@string/enter_answer"
             android:layout_marginTop="10dp"
             android:id="@+id/adding_image_ans"
             android:layout_width="match_parent"
-            android:inputType="text"
             android:fontFamily="@font/wellfleet"
+            android:textCursorDrawable="@drawable/cursor_edit_text"
+            android:backgroundTint="@color/button_color"
             android:textSize="18sp"
             android:layout_height="wrap_content"
-            android:labelFor="@id/text_ans" />
+            android:labelFor="@id/text_ans"
+            tools:ignore="TextFields" />
     </LinearLayout>
 
     <Button
         android:id="@+id/button_share_image"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="@color/gray"
-        android:text="Share"
-        android:textColor="@color/black"
+        android:backgroundTint="@color/button_color"
         android:textSize="20sp"
-        app:cornerRadius="4dp"
-        tools:ignore="HardcodedText" />
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/wellfleet"
+        android:text="@string/share" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import com.trpp.englishproject.R;
 import com.trpp.englishproject.ViewModel.VM;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Stream;
 
@@ -66,7 +65,7 @@ public class AddingTestFragment extends Fragment {
                 if (!question.getText().toString().equals("") &&
                         !et1.getText().toString().equals("") && !et2.getText().toString().equals("") &&
                         !et3.getText().toString().equals("") && !et4.getText().toString().equals("")) {
-                    Stream stream = Stream.of(et1.getText().toString(),et2.getText().toString(),
+                    Stream<String> stream = Stream.of(et1.getText().toString(),et2.getText().toString(),
                             et3.getText().toString(),et4.getText().toString());
                     if (VM.checkTestDuplicates(stream)) {
                         if (rb1.isChecked()) {

@@ -11,7 +11,7 @@
         android:id="@+id/QuestionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text ="Loading..."
+        android:text ="@string/loading"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@id/progressBar"
         android:fontFamily="@font/wellfleet"

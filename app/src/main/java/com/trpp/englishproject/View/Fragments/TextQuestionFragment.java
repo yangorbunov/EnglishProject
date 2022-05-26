@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.trpp.englishproject.Model.TextQuestion;
-import com.trpp.englishproject.View.Activities.EntryActivity;
 import com.trpp.englishproject.ViewModel.VM;
 
 
@@ -48,7 +47,7 @@ public class TextQuestionFragment extends Fragment {
         questionView = view.findViewById(R.id.questionTextView);
         vm = new ViewModelProvider(requireActivity()).get(VM.class);
         answer = view.findViewById(R.id.text_ans);
-        TextQuestion textQuestion = EntryActivity.textQuestions.get(questionNo);
+        TextQuestion textQuestion = VM.textQuestions.get(questionNo);
         noView.setText(String.valueOf(questionNo));
         questionView.setText(textQuestion.getQ());
 
@@ -65,12 +64,7 @@ public class TextQuestionFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if (editable.toString().equalsIgnoreCase(textQuestion.getAns())) {
-                    vm.setAnswer(questionNo,true);
-                }
-                else{
-                    vm.setAnswer(questionNo,false);
-                }
+                vm.setAnswer(questionNo, editable.toString().equalsIgnoreCase(textQuestion.getAns()));
             }
         });
 

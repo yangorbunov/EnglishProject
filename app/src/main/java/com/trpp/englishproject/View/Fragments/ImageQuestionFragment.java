@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.trpp.englishproject.Model.ImageQuestion;
-import com.trpp.englishproject.View.Activities.EntryActivity;
 import com.trpp.englishproject.ViewModel.VM;
 import com.trpp.englishproject.*;
 
@@ -51,7 +50,7 @@ public class ImageQuestionFragment extends Fragment {
         imageView = view.findViewById(R.id.img_pic);
         vm = new ViewModelProvider(requireActivity()).get(VM.class);
         answer = view.findViewById(R.id.text_ans_img);
-        ImageQuestion imageQuestion = EntryActivity.imageQuestions.get(questionNo - 8);
+        ImageQuestion imageQuestion = VM.imageQuestions.get(questionNo - 8);
         noView.setText(String.valueOf(questionNo));
         Glide.with(requireActivity()).load(imageQuestion.getQ()).into(imageView);
 
@@ -68,12 +67,7 @@ public class ImageQuestionFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if (editable.toString().equalsIgnoreCase(imageQuestion.getAns())) {
-                    vm.setAnswer(questionNo,true);
-                }
-                else{
-                    vm.setAnswer(questionNo,false);
-                }
+                vm.setAnswer(questionNo, editable.toString().equalsIgnoreCase(imageQuestion.getAns()));
             }
         });
 
