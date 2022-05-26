@@ -54,5 +54,10 @@
 
     <string name="finish">Finish</string>
 
+    <string name="test_">Test</string>
+    <string name="results">Result</string>
+
+    <string name="enter_ans_eng">Enter answer:</string>
+
 
 </resources>
