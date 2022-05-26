@@ -19,10 +19,10 @@
 
 <p>Приложение представляет из себя тест, в котором заключено 10 вопросов. Вам предлагается ответить на них для того, чтобы определить ваш уровень знания английского языка. </p>
 <p align="center">
-<img src="images/1eng.png">
+<img src="images/1eng.jpg">
 </p>
 <p align="center">
-<img src="images/2eng.png">
+<img src="images/2eng.jpg">
 </p>
 <h1 align="center">Зависимости проекта</h1>
 <p>dependencies {
