@@ -14,13 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnglishProject">
 
-
         <activity
             android:name=".View.Activities.AddingActivity"
             android:exported="false"
             android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".View.Activities.LoadingActivity"
             android:exported="false"
@@ -30,6 +30,7 @@
         <activity
             android:name=".View.Activities.ResultActivity"
             android:exported="false"
+            android:label="@string/results"
             android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -57,7 +58,7 @@
             android:name=".View.Activities.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
-            android:label="@string/test"
+            android:label="@string/test_"
             android:parentActivityName=".View.Activities.EntryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppTheme"

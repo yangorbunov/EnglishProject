@@ -51,14 +51,13 @@ tools:context=".View.Activities.MainActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/wellfleet"
         android:paddingStart="20dp"
         android:paddingEnd="0dp"
-        android:text="Введите ответ:"
+        android:text="@string/enter_ans_eng"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/text_ans"
         android:layout_marginEnd="20dp"
