@@ -12,5 +12,7 @@
     <color name="red">#FF0000</color>
     <color name="blue">	#0096FF</color>
 
+    <color name="flag_img">#181880</color>
+
     <color name="gray">#C4C4C4</color>
 </resources>

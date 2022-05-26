@@ -68,7 +68,7 @@ public class ResultActivity extends AppCompatActivity {
         String res = val + " / 10";
         textView.setText(res);
 
-        if (val == 0){
+        if (val == 10){
             mistakesTV.setText(R.string.no_mistakes);
         }
 

@@ -104,11 +104,9 @@ public class VM extends ViewModel {
         return ifCorrect;
     }
 
-    public static boolean checkTestDuplicates(Stream<String> stream){
-        HashSet<Object> items = new HashSet<>();
-        stream.filter(n -> !items.add(n)).collect(Collectors.toSet());
-
-        return items.isEmpty();
+    public static boolean checkTestDuplicates(ArrayList<String> list){
+        HashSet<String> set = new HashSet<>(list);
+        return list.size() == set.size();
     }
 
     public static void readUsersDB(){

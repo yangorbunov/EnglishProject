@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 import com.trpp.englishproject.R;
 import com.trpp.englishproject.ViewModel.VM;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.stream.Stream;
 
 public class AddingTestFragment extends Fragment {
 
@@ -27,8 +27,7 @@ public class AddingTestFragment extends Fragment {
     Button shareBtn;
 
 
-    public AddingTestFragment() {
-    }
+    public AddingTestFragment() { }
 
 
     public static AddingTestFragment newInstance() {
@@ -65,9 +64,13 @@ public class AddingTestFragment extends Fragment {
                 if (!question.getText().toString().equals("") &&
                         !et1.getText().toString().equals("") && !et2.getText().toString().equals("") &&
                         !et3.getText().toString().equals("") && !et4.getText().toString().equals("")) {
-                    Stream<String> stream = Stream.of(et1.getText().toString(),et2.getText().toString(),
-                            et3.getText().toString(),et4.getText().toString());
-                    if (VM.checkTestDuplicates(stream)) {
+
+                    ArrayList<String> list = new ArrayList<>();
+                    list.add(et1.getText().toString());
+                    list.add(et2.getText().toString());
+                    list.add(et3.getText().toString());
+                    list.add(et4.getText().toString());
+                    if (VM.checkTestDuplicates(list)) {
                         if (rb1.isChecked()) {
                             pushTask(et1.getText().toString());
                         } else if (rb2.isChecked()) {
