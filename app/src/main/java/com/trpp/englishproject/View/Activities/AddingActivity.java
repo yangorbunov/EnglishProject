@@ -55,6 +55,7 @@ public class AddingActivity extends AppCompatActivity {
                         .replace(R.id.fragment_container_ch, AddingImageFragment.newInstance())
                         .commit();
             }
+            
         });
 
     }
